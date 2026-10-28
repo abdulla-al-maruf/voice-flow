@@ -1,0 +1,17 @@
+/VoiceFlow.exe
+/dist/
+/packaging/
+/runtime/
+/node_modules/
+/assets/*.png
+!/assets/logo.png
+!/assets/banner.png
+*.vault
+*.vfh
+*.journal
+*.log
+*.wav
+*.token
+*.credentials.json
+/assets/*.txt
+/tests/

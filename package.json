@@ -1,0 +1,16 @@
+{
+    "name":  "voice-flow",
+    "private":  false,
+    "version":  "0.3.3",
+    "description":  "Voice Flow: Bangla and English voice typing for Windows",
+    "scripts":  {
+                    "test":  "node --test --test-isolation=none bridge/native-session.test.cjs bridge/local-engine.test.cjs bridge/paid-engines.test.cjs"
+                },
+    "engines":  {
+                    "node":  "\u003e=24"
+                },
+    "dependencies":  {
+                         "sherpa-onnx-node":  "2.0.1"
+                     },
+    "license":  "MIT"
+}

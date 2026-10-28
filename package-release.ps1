@@ -16,7 +16,7 @@ $sources = @(Get-ChildItem -LiteralPath (Join-Path $packageRoot 'src') -Filter '
 $options = @('/nologo','/target:winexe','/platform:x64','/optimize+','/warn:4','/main:SetupProgram','/r:System.Windows.Forms.dll','/r:System.Drawing.dll','/r:System.Web.Extensions.dll','/r:System.Security.dll','/r:System.IO.Compression.dll','/r:System.IO.Compression.FileSystem.dll',('/win32manifest:'+(Join-Path $packageRoot 'app.manifest')),('/win32icon:'+(Join-Path $packageRoot 'assets\voice.ico')))
 & $compiler @options '/define:UNINSTALL' ('/out:'+(Join-Path $payloadRoot 'VoiceFlow.Uninstall.exe')) @sources
 if ($LASTEXITCODE -ne 0) { throw 'Uninstaller build failed.' }
-foreach ($file in @('VoiceFlow.exe','release.json','README.md','PRIVACY.md','TROUBLESHOOTING.md','CHANGELOG.md','THIRD-PARTY-NOTICES.md')) { Copy-Item -LiteralPath (Join-Path $packageRoot $file) -Destination $payloadRoot }
+foreach ($file in @('VoiceFlow.exe','release.json','README.md','docs/PRIVACY.md','docs/TROUBLESHOOTING.md','CHANGELOG.md','THIRD-PARTY-NOTICES.md')) { Copy-Item -LiteralPath (Join-Path $packageRoot $file) -Destination $payloadRoot }
 foreach ($directory in @('bridge','runtime','third-party','assets','node_modules')) { New-Item -ItemType Directory -Path (Join-Path $payloadRoot $directory) | Out-Null }
 Get-ChildItem -LiteralPath (Join-Path $packageRoot 'bridge') -Filter '*.cjs' | Where-Object { $_.Name -notlike '*.test.cjs' } | ForEach-Object { Copy-Item -LiteralPath $_.FullName -Destination (Join-Path $payloadRoot 'bridge') }
 # Offline speech library for the local engine; the model itself is downloaded into the user's data folder, not bundled.

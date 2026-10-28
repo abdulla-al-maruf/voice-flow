@@ -1,23 +1,21 @@
 ---
-name: সমস্যা জানান
-about: Voice Flow ব্যবহার করতে গিয়ে কী সমস্যা হচ্ছে জানান
+name: Report a problem
+about: Something does not work in Voice Flow
 title: ''
-labels: ''
+labels: bug
 assignees: ''
 ---
 
-**কী সমস্যা হচ্ছে?**
+**What went wrong?**
 
 
-**কী করলে সমস্যাটি হয়?**
+**Steps to reproduce**
 
 
-**কী হওয়ার কথা ছিল?**
+**What did you expect?**
 
 
-**Voice Flow version এবং Windows version**
+**Voice Flow version, Windows version, and which engine (local, Sarvam, Chariot)**
 
 
-ইচ্ছা করলে app-এর “সমস্যার লগ সংরক্ষণ” থেকে sanitized log যোগ করতে পারেন।
-
-এটি public report। Password, sign-in token, ব্যক্তিগত লেখা বা audio দেবেন না।
+You can attach the sanitized log from the app ("সমস্যার লগ সংরক্ষণ"). This is a public report: do not include passwords, API keys, private text or audio.

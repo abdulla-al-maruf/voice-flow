@@ -6,6 +6,8 @@
 /assets/*.png
 !/assets/logo.png
 !/assets/banner.png
+/assets/*.txt
+/tests/
 *.vault
 *.vfh
 *.journal
@@ -13,5 +15,3 @@
 *.wav
 *.token
 *.credentials.json
-/assets/*.txt
-/tests/

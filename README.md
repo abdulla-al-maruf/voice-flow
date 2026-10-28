@@ -2,56 +2,64 @@
 
 # Voice Flow
 
-Bangla and English voice typing for Windows. Press **Ctrl+Space**, speak, press **Ctrl+Space** again. The text appears where your cursor is.
-
-বাংলা ও English মিশিয়ে কথা বলুন, লেখা কার্সরের জায়গায় বসে যাবে।
+Bangla and English voice typing for Windows. Press **Ctrl+Space**, speak, press **Ctrl+Space** again. The text appears where your cursor is, in any app.
 
 <p align="center"><img src="docs/screenshots/home.png" alt="Voice Flow main window" width="520"> <img src="docs/screenshots/key.png" alt="Paste your engine key" width="300"></p>
 
+> The app's own interface is in Bangla. This repository (docs, code comments, issues) is in English.
+
 ## Install
 
-1. Download `VoiceFlow-0.3.3-Setup.exe` from the [Releases](../../releases) page and run it. Windows 10 or 11 (x64) with .NET Framework 4.7.2 or newer. Node.js is included.
-2. Open Voice Flow and pick a voice engine (below).
-3. Put the cursor where you want to type. **Ctrl+Space**, speak, **Ctrl+Space**. **Esc** cancels.
+1. Download `VoiceFlow-0.3.3-Setup.exe` from [Releases](../../releases/latest) and run it.
+   Requires Windows 10 or 11 (x64) and .NET Framework 4.7.2 or newer. Node.js is bundled.
+2. Open Voice Flow and pick a voice engine (see below).
+3. Put the cursor where you want text. Press **Ctrl+Space**, speak, press **Ctrl+Space**. **Esc** cancels.
 
-The installer is not code-signed yet, so Windows may warn you. Check the SHA-256 in `SHA256SUMS.txt` against the file you downloaded.
+The installer is not code-signed yet, so Windows SmartScreen may warn you. Compare the file's SHA-256 with `SHA256SUMS.txt` on the release page before running it.
 
 ## Voice engines
 
 | Engine | Internet | Cost | Setup |
 |---|---|---|---|
-| **Local model** | Once, to download (about 71 MB). Then none. | Free | Press "লোকাল মডেল নামান" |
-| **Sarvam** | Yes | Your own Sarvam account | "চাবি নিন" opens their key page. Create a key, copy it, press "চাবি বসান", paste |
+| **Local model** | Once, to download it (about 71 MB). Then none. | Free | Press the download button ("লোকাল মডেল নামান") |
+| **Sarvam** | Yes | Your own Sarvam account | Press "চাবি নিন" (Get key): their key page opens. Create a key, copy it, press "চাবি বসান" (Paste key), paste |
 | **Chariot** | Yes | Your own Chariot account | Same as Sarvam |
 
-The app shows these steps for the engine you pick. Audio goes only to the engine you chose. With the local model it never leaves your computer. Details: [PRIVACY.md](PRIVACY.md).
+The app shows these steps for the engine you pick. Audio goes only to the engine you chose; with the local model it never leaves your computer. Details: [docs/PRIVACY.md](docs/PRIVACY.md). Key steps in more detail: [docs/ENGINES.md](docs/ENGINES.md).
 
-If Sarvam or Chariot fails and the local model is installed, the same recording is read again by the local model and the caption tells you.
+If Sarvam or Chariot fails and the local model is installed, the same recording is re-read by the local model, and the caption card says so.
 
-## What it does
+## Features
 
-- A small caption card shows the text while you speak. It does not take focus.
+- A small caption card shows the text while you speak. It never takes focus.
 - If pasting is not possible, the text stays on the clipboard.
-- **সাম্প্রতিক কথা** keeps your last 20 recordings (text and audio), encrypted for your Windows user. You can play, copy, retry or delete them.
-- The window's × button keeps the app in the tray. Use the tray menu to quit.
+- The history window ("সাম্প্রতিক কথা", Recent) keeps your last 20 recordings with text and audio, encrypted for your Windows user. Play, copy, retry or delete any of them.
+- Closing the window keeps the app in the tray. Quit from the tray menu.
+- Keys are stored with Windows DPAPI. Nothing is uploaded automatically.
 
-Accuracy depends on the engine, your microphone and your speech. No accuracy or cost guarantees are made here.
+Accuracy depends on the engine, your microphone and how you speak. This project makes no accuracy, speed or cost promises for third-party services.
 
 ## Report a problem
 
-"···" menu, then "সমস্যা জানান" opens the GitHub issue page. You write the report yourself. Do not post passwords, keys or private audio. [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
+In the app, open the "···" menu and choose "সমস্যা জানান" (Report a problem). It opens the GitHub issue form in your browser; you write and submit it yourself. Do not post passwords, keys or private audio. See [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md).
 
 ## Build from source
 
 Needs the .NET Framework compiler that ships with Windows, and Node.js 24 or newer.
 
 ```powershell
-npm install
-.\build.ps1                 # builds VoiceFlow.exe
-npm test                    # bridge tests
-.\VoiceFlow.exe --self-test # native checks in an isolated data folder
-.\package-release.ps1       # builds dist\VoiceFlow-0.3.3-Setup.exe
+npm ci
+.\build.ps1                  # builds VoiceFlow.exe
+npm test                     # helper tests
+.\VoiceFlow.exe --self-test  # native checks in an isolated data folder
+.\package-release.ps1        # builds dist\VoiceFlow-0.3.3-Setup.exe
 ```
+
+Project layout: `src/` (C# WinForms app), `bridge/` (Node helper and engines), `setup/` (installer), `docs/`.
+
+## Contributing
+
+Issues and pull requests are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 

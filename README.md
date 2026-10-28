@@ -8,6 +8,8 @@ Bangla and English voice typing for Windows. Press **Ctrl+Space**, speak, press 
 
 > The app's own interface is in Bangla. This repository (docs, code comments, issues) is in English.
 
+**New here?** Start with the [step-by-step guide](docs/GETTING-STARTED.md). Stuck? Give this repository link to an AI assistant and ask it to walk you through the docs.
+
 ## Install
 
 1. Download `VoiceFlow-0.3.3-Setup.exe` from [Releases](../../releases/latest) and run it.
@@ -25,7 +27,7 @@ The installer is not code-signed yet, so Windows SmartScreen may warn you. Compa
 | **Sarvam** | Yes | Your own Sarvam account | Press "চাবি নিন" (Get key): their key page opens. Create a key, copy it, press "চাবি বসান" (Paste key), paste |
 | **Chariot** | Yes | Your own Chariot account | Same as Sarvam |
 
-The app shows these steps for the engine you pick. Audio goes only to the engine you chose; with the local model it never leaves your computer. Details: [docs/PRIVACY.md](docs/PRIVACY.md). Key steps in more detail: [docs/ENGINES.md](docs/ENGINES.md).
+The app shows these steps for the engine you pick. Audio goes only to the engine you chose; with the local model it never leaves your computer. Details: [privacy](docs/PRIVACY.md), [engines and keys](docs/ENGINES.md), [FAQ](docs/FAQ.md).
 
 If Sarvam or Chariot fails and the local model is installed, the same recording is re-read by the local model, and the caption card says so.
 

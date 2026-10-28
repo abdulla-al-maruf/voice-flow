@@ -19,6 +19,8 @@ Bangla and English voice typing for Windows. Press **Ctrl+Space**, speak, press 
 
 The installer is not code-signed yet, so Windows SmartScreen may warn you. Compare the file's SHA-256 with `SHA256SUMS.txt` on the release page before running it.
 
+**Virus scan:** [VirusTotal report for the v0.3.3 installer](https://www.virustotal.com/gui/file/4c99026cf79cd7253ac4ea8ae35babd0943237bb67b0a53a089f96b922bfee67). Microsoft Defender, ESET, Symantec, Sophos, Malwarebytes, CrowdStrike, Trend Micro and most others found nothing. 4 of 52 machine-learning or reputation scanners flagged it, which is common for a new, unsigned installer that bundles Node.js. All source code is in this repository, and you can build the installer yourself.
+
 ## Voice engines
 
 | Engine | Internet | Cost | Setup |

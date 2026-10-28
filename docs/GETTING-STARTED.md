@@ -5,7 +5,7 @@ This guide takes you from download to your first dictated sentence. It assumes n
 ## 1. Install
 
 1. Open the [latest release](https://github.com/abdulla-al-maruf/voice-flow/releases/latest) and download `VoiceFlow-0.3.3-Setup.exe`.
-2. Run it. If Windows shows a blue "Windows protected your PC" box, the installer is not code-signed yet. Click **More info**, then **Run anyway**. If you want to be careful, first compare the file's SHA-256 with `SHA256SUMS.txt` on the release page (`Get-FileHash .\VoiceFlow-0.3.3-Setup.exe` in PowerShell).
+2. Run it. If Windows shows a blue "Windows protected your PC" box, the installer is not code-signed yet. Click **More info**, then **Run anyway**. If you want to be careful, first compare the file's SHA-256 with `SHA256SUMS.txt` on the release page (`Get-FileHash .\VoiceFlow-0.3.3-Setup.exe` in PowerShell). You can also read the [VirusTotal report](https://www.virustotal.com/gui/file/4c99026cf79cd7253ac4ea8ae35babd0943237bb67b0a53a089f96b922bfee67).
 3. Click the install button and wait. Voice Flow opens when it finishes.
 
 Requirements: Windows 10 or 11 (64-bit) and .NET Framework 4.7.2 or newer (already present on current Windows). Node.js is bundled; you do not install it.
